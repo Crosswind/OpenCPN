@@ -6940,6 +6940,29 @@ extern DECL_EXP wxBitmap GetObjectIcon_PlugIn(const wxString &name);
 extern DECL_EXP bool IsRouteActive(wxString route_guid);
 extern DECL_EXP void SetBoatPosition(double zlat, double zlon);
 
+extern DECL_EXP void RouteInsertWaypoint(wxString route_guid, double zlat,
+                                         double zlon);
+extern DECL_EXP void RouteAppendWaypoint(int canvas_index, wxString route_guid);
+extern DECL_EXP void FinishRoute(int canvas_index);
+extern DECL_EXP bool IsRouteBeingCreated(int canvas_index);
+extern DECL_EXP bool AreRouteWaypointNamesVisible(wxString route_guid);
+extern DECL_EXP void ShowRouteWaypointNames(wxString route_guid, bool show);
+extern DECL_EXP void NavigateToWaypoint(wxString waypoint_guid);
+
+// AIS related
+extern DECL_EXP bool IsAISTrackVisible(
+    wxString ais_mmsi);  // for Show/Hide Target Track
+extern DECL_EXP void AISToggleShowTrack(
+    wxString ais_mmsi);  // for Show/Hide Target Track
+extern DECL_EXP bool IsAIS_CPAVisible(
+    wxString ais_mmsi);  // for Show/Hide Target CPA
+extern DECL_EXP void AISToggleShowCPA(
+    wxString ais_mmsi);  // for Show/Hide Target CPA
+extern DECL_EXP void ShowAISTargetQueryDialog(
+    int canvas_index,
+    wxString ais_mmsi);                                    // for Target Query
+extern DECL_EXP void ShowAISTargetList(int canvas_index);  // for Target List
+
 //  Plugin Context Menu support
 typedef enum _PI_ContextObjectType {
   OBJECT_CHART = 0,
