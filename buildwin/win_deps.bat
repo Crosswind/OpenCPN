@@ -49,6 +49,10 @@ if not exist C:\ProgramData\chocolatey\lib\nsis (
   choco install -y nsis
 )
 
+:: Pin OpenSSL version here for testing
+choco install -y openssl --version=3.5.2
+openssl version -a
+
 :: Make sure the pre-compiled libraries are in place
 set "GH_DL_BASE=https://github.com/OpenCPN/OCPNWindowsCoreBuildSupport"
 set "opencpn_support_base=https://dl.cloudsmith.io/public/alec-leamas"
